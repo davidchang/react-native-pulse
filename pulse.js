@@ -118,7 +118,7 @@ export default class Pulse extends Component {
         if (this.mounted) {
             const pulses = this.state.pulses.map((p, i) => {
                 let maxDiameter = this.state.maxDiameter;
-                let newDiameter = (p.diameter > maxDiameter ? 0 : p.diameter + 2);
+                let newDiameter = (p.diameter > maxDiameter ? this.props.initialDiameter : p.diameter + 2);
                 let centerOffset = ( maxDiameter - newDiameter ) / 2;
                 let opacity = Math.abs( ( newDiameter / this.state.maxDiameter ) - 1 );
 
